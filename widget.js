@@ -45,7 +45,7 @@ const phone = phoneInput;
 
     if (data.success) {
       statusMsg.className = 'status success';
-      statusMsg.innerText = 'OTP sent! Check terminal logs for code.';
+      statusMsg.innerText = 'OTP SENT! Check your SMS messages for the code.';
       document.getElementById('otp-section').style.display = 'block';
     } else {
       statusMsg.className = 'status error';
