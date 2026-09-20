@@ -14,7 +14,16 @@ if (window.JotFormCustomWidget) {
 }
 
 async function sendOtp() {
-  const phone = document.getElementById('phone').value.trim();
+ let phoneInput = document.getElementById('phone').value.trim();
+
+// Automatically convert 07... / 01... or +254... to standard 254 format
+if (phoneInput.startsWith('0')) {
+    phoneInput = '254' + phoneInput.substring(1);
+} else if (phoneInput.startsWith('+254')) {
+    phoneInput = phoneInput.substring(1);
+}
+
+const phone = phoneInput;
   const statusMsg = document.getElementById('status-msg');
 
   if (!phone) {
